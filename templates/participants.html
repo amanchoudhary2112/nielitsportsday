@@ -1,0 +1,63 @@
+<!-- templates/participants.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Participants List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen p-6 font-sans text-gray-800">
+
+  <div class="max-w-7xl mx-auto space-y-8">
+    
+    <!-- Header -->
+    <header class="flex flex-col sm:flex-row justify-between items-center gap-4">
+      <h1 class="text-3xl font-bold text-indigo-700">🏅 Registered Participants</h1>
+      <div class="flex flex-wrap gap-3">
+        <a href="{{ url_for('download_excel') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">
+          📥 Download Excel
+        </a>
+        <a href="{{ url_for('logout') }}" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition">
+          🚪 Logout
+        </a>
+      </div>
+    </header>
+
+    <!-- Participants Table -->
+    <section class="overflow-x-auto bg-white shadow-md rounded-lg">
+      <table class="min-w-full table-auto text-sm">
+        <thead class="bg-gray-100 text-left text-gray-700 uppercase tracking-wider">
+          <tr>
+            <th class="px-6 py-3">#</th>
+            <th class="px-6 py-3">Name</th>
+            <th class="px-6 py-3">Email Address</Address></th>
+            <th class="px-6 py-3">Sport</th>
+            <th class="px-6 py-3">Roll No.</th>
+            <th class="px-6 py-3">Mobile Number</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          {% for participant in participants %}
+          <tr class="hover:bg-gray-50 transition">
+            <td class="px-6 py-4 font-medium">{{ loop.index }}</td>
+            <td class="px-6 py-4">{{ participant[0] }}</td>
+            <td class="px-6 py-4">{{ participant[1] }}</td>
+            <td class="px-6 py-4">{{ participant[2] }}</td>
+            <td class="px-6 py-4">{{ participant[3] }}</td>
+            <td class="px-6 py-4">{{ participant[4] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-500 mt-10">
+      &copy; {{ current_year }} College Sports Event. All rights reserved.
+    </footer>
+
+  </div>
+
+</body>
+</html>
