@@ -9,17 +9,17 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css"  rel="stylesheet">
   <style>
     .hero-bg {
-      background-image: url("static/sportdaybanner2.jpg");
+      background-image: url("static/images/banner5 copy.png");
       background-size: cover;
       background-position: center;
-      min-height: 400px;
+      min-height: 450px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
     }
 
-    .tricolor-overlay {
+    /* .tricolor-overlay {
       background: linear-gradient(
         to bottom,
         rgba(255, 102, 0, 0.6),
@@ -32,7 +32,7 @@
       backdrop-filter: blur(3px);
       max-width: 400px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
+    } */
 
     .chakra-btn {
       background-color: #0f3f8f;
@@ -95,7 +95,7 @@
     <div class="container mx-auto px-4 flex justify-between items-center">
       <div class="flex items-center space-x-3">
         <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/NIELIT_Logo.jpg"  alt="Institute Logo" class="h-10 object-contain">
-        <!-- <h1 class="text-xl md:text-2xl font-bold">🏅 Sports Day 2025</h1> -->
+        <h1 class="text-l md:text-l font-bold">Sports Day 2025</h1>
       </div>
       <nav class="space-x-4 md:space-x-6 text-sm md:text-base">
         <a href="/" class="hover:underline">Home</a>
@@ -107,12 +107,19 @@
 
   <!-- Hero Section -->
   <section class="hero-bg text-white px-4 pb-6" data-aos="fade-up">
-    <div class="tricolor-overlay mx-auto bg-white rounded-xl p-10 shadow-lg">
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-[#0f3f8f]">National Sports Day 2025</h2>
-      <p class="text-base md:text-lg mb-4 text-gray-700 font-semibold">Celebrate the spirit of unity and sportsmanship!</p>
-      <a href="/register" class="chakra-btn">Register Now</a>
+    <!-- <div class="tricolor-overlay mx-auto bg-white rounded-xl p-10 shadow-lg"> -->
+      <!-- <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-[#0f3f8f]">National Sports Day 2025</h2> -->
+      <!-- <p class="text-base md:text-lg mb-4 text-gray-700 font-semibold">Celebrate the spirit of unity and sportsmanship!</p> -->
     </div>
   </section>
+  <div class="relative h-[50px]">
+  <!-- Other content -->
+
+  <a href="/register" class="chakra-btn absolute bottom-6 left-1/2 transform -translate-x-1/2">
+    Register Now
+  </a>
+</div>
+
 
   <!-- Countdown Timer -->
   <section class="text-center pt-6 pb-10" data-aos="fade-up">
@@ -127,7 +134,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {% for sport, image in sports.items() %}
         <a href="{{ url_for('register', sport=sport) }}" class="block border-2 border-[#138808] rounded-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-          <img src="{{ image }}" alt="{{ sport }}" class="w-full h-56 object-cover">
+          <img src="{{ image }}" alt="{{ sport }}" class="w-full h-60 object-cover">
           <h4 class="mt-3 mb-4 text-lg font-semibold text-[#ff6600]">{{ sport }}</h4>
         </a>
         {% endfor %}
@@ -140,7 +147,7 @@
     <div class="max-w-4xl mx-auto text-center">
       <h3 class="text-2xl font-bold text-[#ff6600] mb-6">🇮🇳 Did You Know?</h3>
       <ul class="space-y-4 text-lg text-gray-700">
-        <li>📅 National Sports Day is celebrated on August 29, the birth anniversary of Major Dhyan Chand.</li>
+        <li>National Sports Day is celebrated on August 29, the birth anniversary of Major Dhyan Chand.</li>
         <li>🏑 Major Dhyan Chand was known as the "Wizard of Hockey".</li>
         <li>🎖️ India has won 8 Olympic gold medals in field hockey, the highest by any team.</li>
       </ul>
